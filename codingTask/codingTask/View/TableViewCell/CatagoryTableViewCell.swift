@@ -15,7 +15,8 @@ class CatagoryTableViewCell: UITableViewCell, ShimmeringViewProtocol {
         @IBOutlet weak var productNameLabel: UILabel!
         @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var productDescriptionLabel: UILabel!
-    
+    @IBOutlet weak var foodLogo: UIImageView!
+
     var shimmeringAnimatedItems: [UIView] {
             [
                 foodImageView,
@@ -26,23 +27,17 @@ class CatagoryTableViewCell: UITableViewCell, ShimmeringViewProtocol {
         }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        foodLogo.alpha = 0.50
     }
     func configure(with item: String) {
-            // Update this function to configure the cell with the actual data.
-            // For demonstration, we're just setting the product name.
             self.productNameLabel.text = item
-            // You can set the image and price here as well.
         }
     override func prepareForReuse() {
            super.prepareForReuse()
-           // Reset shimmering effect before reuse
            setTemplateWithSubviews(false)
        }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
