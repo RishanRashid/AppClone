@@ -406,9 +406,9 @@
                     <connections>
                         <outlet property="WoopView" destination="w9C-xG-Ej7" id="AZd-Y8-4Ri"/>
                         <outlet property="backButton" destination="aCT-wd-k1v" id="Zgx-hq-eQA"/>
-                        <outlet property="botttomView" destination="AVq-sY-YRu" id="McZ-fZ-lxR"/>
+                        <outlet property="bottomView" destination="AVq-sY-YRu" id="Qv7-CH-v5H"/>
                         <outlet property="continueButton" destination="cMZ-hR-IGS" id="Dkd-go-RXy"/>
-                        <outlet property="restaurentLogo" destination="Yk3-yX-Q7w" id="SWm-0H-lk3"/>
+                        <outlet property="restaurantLogo" destination="Yk3-yX-Q7w" id="PwW-ux-6gn"/>
                         <outlet property="searchButton" destination="B0r-k7-gFO" id="1IQ-wv-DmH"/>
                         <outlet property="sendButton" destination="igI-uM-7wd" id="IL8-JB-hgg"/>
                         <outlet property="viewPager" destination="YnS-Vy-Jj5" id="mya-Ul-uDO"/>
@@ -597,19 +597,19 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

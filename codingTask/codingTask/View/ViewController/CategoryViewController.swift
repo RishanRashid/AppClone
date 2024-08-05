@@ -13,7 +13,8 @@ protocol CategoryViewControllerDelegate: AnyObject {
     func didFinishViewingItems(in viewController: CategoryViewController, direction: ScrollDirection)
 }
 class CategoryViewController: UIViewController {
-    var items: [String] = []
+    var items: [Item] = []
+    var titleHeader: String?
     weak var delegate: CategoryViewControllerDelegate?
     
     @IBOutlet weak var catagoryList: UITableView!
@@ -59,15 +60,37 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CatagoryTableViewCell", for: indexPath) as? CatagoryTableViewCell else {
             return UITableViewCell()
         }
+        
+        let item = items[indexPath.row]
+        
         if isLoadingData {
             cell.setTemplateWithSubviews(true, viewBackgroundColor: UIColor(red: 0.95, green: 0.73, blue: 0.37, alpha: 1.00))
         } else {
             cell.setTemplateWithSubviews(false)
-            cell.productNameLabel.text = items[indexPath.row]
+            cell.productNameLabel.text = item.name
+            cell.priceLabel.text = "KD. " + "\(item.regularPrice ?? 0)"
+            cell.productDescriptionLabel.text = item.description
+            
+            if let iconURLString = item.icon, let url = URL(string: iconURLString) {
+                ServiceFile.shared.downloadImage(from: url) { image in
+                    DispatchQueue.main.async {
+                        if let downloadedImage = image {
+                            cell.foodImageView.image = downloadedImage
+                        } else {
+                            cell.foodImageView.image = UIImage(named: "placeholder")
+                        }
+                    }
+                }
+            } else {
+                cell.foodImageView.image = UIImage(named: "placeholder")
+            }
         }
         
         return cell
     }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            return titleHeader
+        }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentHeight = scrollView.contentSize.height

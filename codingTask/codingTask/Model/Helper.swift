@@ -28,7 +28,7 @@ class FoodItemsHeaderView: UIView {
     
     private let stackView = UIStackView()
     
-    var foodItems: [String] = [] {
+    var titleCatagory: [String] = [] {
         didSet {
             setupButtons()
         }
@@ -61,7 +61,7 @@ class FoodItemsHeaderView: UIView {
     
     private func setupButtons() {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        for item in foodItems {
+        for item in titleCatagory {
             let button = UIButton(type: .system)
             button.setTitle(item, for: .normal)
             button.setTitleColor(.black, for: .normal)

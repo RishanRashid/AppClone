@@ -27,7 +27,8 @@ class CatagoryTableViewCell: UITableViewCell, ShimmeringViewProtocol {
         }
     override func awakeFromNib() {
         super.awakeFromNib()
-        foodLogo.alpha = 0.50
+        foodLogo.layer.cornerRadius = 10
+        foodLogo.clipsToBounds =  true
     }
     func configure(with item: String) {
             self.productNameLabel.text = item
